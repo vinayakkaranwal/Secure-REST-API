@@ -32,62 +32,62 @@ Includes Swagger documentation, actuator monitoring, and Postman-tested endpoint
 -SecureRestApiApplication.java   # Main entry point
 
 -advice/
- ├── ErrorResponse              # Standard error response model
- └── GlobalExceptionHandler     # Centralized exception handling
+ ─ ErrorResponse              # Standard error response model
+ ─ GlobalExceptionHandler     # Centralized exception handling
 
 -config/
- ├── AppConfig                  # Provides ModelMapper bean 
- ├── JpaAuditingConfig          # JPA auditing setup
- ├── SwaggerConfig              # Swagger/OpenAPI configuration
- └── WebSecurityConfig          # Spring Security + JWT config
+ ─ AppConfig                  # Provides ModelMapper bean 
+ ─ JpaAuditingConfig          # JPA auditing setup
+ ─ SwaggerConfig              # Swagger/OpenAPI configuration
+ ─ WebSecurityConfig          # Spring Security + JWT config
 
 -controllers/
- ├── AdminController            # Admin endpoints (manage users)
- ├── AuthController             # Signup/Login and refresh endpoints
- ├── TaskController             # Task CRUD endpoints
- └── UserController             # User self‑delete endpoint
+ ─ AdminController            # Admin endpoints (manage users)
+ ─ AuthController             # Signup/Login and refresh endpoints
+ ─ TaskController             # Task CRUD endpoints
+ ─ UserController             # User self‑delete endpoint
 
 -dto/
- ├── LoginDTO                   # Login request payload
- ├── LoginResponseDTO           # Login response with JWT
- ├── SignupDTO                  # Signup request payload
- ├── TaskDTO                    # Task data transfer object
- └── UserDTO                    # User DTO and SignupResponseDTO
+ ─ LoginDTO                   # Login request payload
+ ─ LoginResponseDTO           # Login response with JWT
+ ─ SignupDTO                  # Signup request payload
+ ─ TaskDTO                    # Task data transfer object
+ ─ UserDTO                    # User DTO and SignupResponseDTO
 
 -entities/
- ├── enums/
- │    ├── Permissions           # Enum for granular permissions
- │    └── Roles                 # Enum for roles (USER, ADMIN)
- ├── AuditableEntity            # Base entity with audit fields
- ├── SessionEntity              # Session tracking entity
- ├── Task                       # Task entity
- └── User                       # User entity
+ ─ enums/
+     ─ Permissions           # Enum for granular permissions
+     ─ Roles                 # Enum for roles (USER, ADMIN)
+ ─ AuditableEntity            # Base entity with audit fields
+ ─ SessionEntity              # Session tracking entity
+ ─ Task                       # Task entity
+ ─ User                       # User entity
 
 -exceptions/
- └── ResourceNotFoundException  # Custom exception
+ ─ ResourceNotFoundException  # Custom exception
 
 -filter/
- └── JWTAuthFilter              # JWT authentication filter
+ ─ JWTAuthFilter              # JWT authentication filter
 
 -handler/
- └── OAuth2SuccessHandler       # OAuth2 login success handler
+ ─ OAuth2SuccessHandler       # OAuth2 login success handler
 
 -repositories/
- ├── SessionRepo                # Repository for sessions
- ├── TaskRepo                   # Repository for tasks
- └── UserRepositorie            # Repository for users
+ ─ SessionRepo                # Repository for sessions
+ ─ TaskRepo                   # Repository for tasks
+ ─ UserRepositorie            # Repository for users
 
 -services/
- ├── AuthService                # Signup/Login and refresh logic
- ├── JwtService                 # JWT generation/validation
- ├── SessionService             # Session management
- ├── TaskService                # Task business logic
- └── UserService                # User business logic
+ ─ AuthService                # Signup/Login and refresh logic
+ ─ JwtService                 # JWT generation/validation
+ ─ SessionService             # Session management
+ ─ TaskService                # Task business logic
+ ─ UserService                # User business logic
 
 -utils/
- ├── AuditorAwareImpl           # Provides current user for auditing
- ├── DataInitializer            # Seeds initial admin details
- └── PermissionMapping          # Maps roles to permissions
+ ─ AuditorAwareImpl           # Provides current user for auditing
+ ─ DataInitializer            # Seeds initial admin details
+ ─ PermissionMapping          # Maps roles to permissions
   
 ## API Endpoints
 - Auth
