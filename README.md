@@ -21,7 +21,7 @@ Includes Swagger documentation, actuator monitoring, and Postman-tested endpoint
 - Spring Data JPA Auditing
 
 ## Tech Stack
-- Backend: Spring Boot, Spring Security(JWT, OAuth2), Spring Data JPA, Hibernate, Java 21 
+- Backend: Spring Boot, Spring Security (JWT, OAuth2), Spring Data JPA, Hibernate, Java 21, Spring MVC, REST APIs 
 - Database: MySQL (managed with DBeaver)
 - Build Tool: Apache Maven
 - Documentation: Swagger/OpenAPI
@@ -29,65 +29,65 @@ Includes Swagger documentation, actuator monitoring, and Postman-tested endpoint
 - Testing: Postman
 
 ## Project Structure
--SecureRestApiApplication.java   # Main entry point
+- SecureRestApiApplication.java   → Main entry point
 
--advice/
- ─ ErrorResponse              # Standard error response model
- ─ GlobalExceptionHandler     # Centralized exception handling
+- advice/
+  - ErrorResponse                → Standard error response model
+  - GlobalExceptionHandler       → Centralized exception handling
 
--config/
- ─ AppConfig                  # Provides ModelMapper bean 
- ─ JpaAuditingConfig          # JPA auditing setup
- ─ SwaggerConfig              # Swagger/OpenAPI configuration
- ─ WebSecurityConfig          # Spring Security + JWT config
+- config/
+  - AppConfig                  → Provides ModelMapper bean 
+  - JpaAuditingConfig          → JPA auditing setup
+  - SwaggerConfig              → Swagger/OpenAPI configuration
+  - WebSecurityConfig          → Spring Security + JWT config
 
--controllers/
- ─ AdminController            # Admin endpoints (manage users)
- ─ AuthController             # Signup/Login and refresh endpoints
- ─ TaskController             # Task CRUD endpoints
- ─ UserController             # User self‑delete endpoint
+- controllers/
+  - AdminController            → Admin endpoints (manage users)
+  - AuthController             → Signup/Login and refresh endpoints
+  - TaskController             → Task CRUD endpoints
+  - UserController             → User self‑delete endpoint
 
--dto/
- ─ LoginDTO                   # Login request payload
- ─ LoginResponseDTO           # Login response with JWT
- ─ SignupDTO                  # Signup request payload
- ─ TaskDTO                    # Task data transfer object
- ─ UserDTO                    # User DTO and SignupResponseDTO
+- dto/
+  - LoginDTO                   → Login request payload
+  - LoginResponseDTO           → Login response with JWT
+  - SignupDTO                  → Signup request payload
+  - TaskDTO                    → Task data transfer object
+  - UserDTO                    → User DTO and SignupResponseDTO
 
--entities/
- ─ enums/
-     ─ Permissions           # Enum for granular permissions
-     ─ Roles                 # Enum for roles (USER, ADMIN)
- ─ AuditableEntity            # Base entity with audit fields
- ─ SessionEntity              # Session tracking entity
- ─ Task                       # Task entity
- ─ User                       # User entity
+- entities/
+  - enums/
+     - Permissions           → Enum for granular permissions
+     - Roles                 → Enum for roles (USER, ADMIN)
+  - AuditableEntity            → Base entity with audit fields
+  - SessionEntity              → Session tracking entity
+  - Task                       → Task entity
+  - User                       → User entity
 
--exceptions/
- ─ ResourceNotFoundException  # Custom exception
+- exceptions/
+  - ResourceNotFoundException  → Custom exception
 
--filter/
- ─ JWTAuthFilter              # JWT authentication filter
+- filter/
+  - JWTAuthFilter              → JWT authentication filter
 
--handler/
- ─ OAuth2SuccessHandler       # OAuth2 login success handler
+- handler/
+  - OAuth2SuccessHandler       → OAuth2 login success handler
 
--repositories/
- ─ SessionRepo                # Repository for sessions
- ─ TaskRepo                   # Repository for tasks
- ─ UserRepositorie            # Repository for users
+- repositories/
+  - SessionRepo                → Repository for sessions
+  - TaskRepo                   → Repository for tasks
+  - UserRepositorie            → Repository for users
 
--services/
- ─ AuthService                # Signup/Login and refresh logic
- ─ JwtService                 # JWT generation/validation
- ─ SessionService             # Session management
- ─ TaskService                # Task business logic
- ─ UserService                # User business logic
+- services/
+  - AuthService                → Signup/Login and refresh logic
+  - JwtService                 → JWT generation/validation
+  - SessionService             → Session management
+  - TaskService                → Task business logic
+  - UserService                → User business logic
 
--utils/
- ─ AuditorAwareImpl           # Provides current user for auditing
- ─ DataInitializer            # Seeds initial admin details
- ─ PermissionMapping          # Maps roles to permissions
+- utils/
+  - AuditorAwareImpl           → Provides current user for auditing
+  - DataInitializer            → Seeds initial admin details
+  - PermissionMapping          → Maps roles to permissions
   
 ## API Endpoints
 - Auth
